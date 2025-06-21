@@ -115,7 +115,7 @@ func findCommandPaths[C Command, M Message](
 						pathSteps: append(entry.pathSteps, opt.OptionName()),
 					})
 				}
-			case discord.SlashCommandOptionSubCommandGroup:
+			case discord.ApplicationCommandOptionSubCommandGroup:
 				for _, opt := range command.Options {
 					stack = append(stack, stackEntry{
 						item:      opt,

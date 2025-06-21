@@ -42,7 +42,7 @@ func (e Error) Presentable() (s string) {
 		}
 
 		return formatted
-	})
+	}) + "."
 }
 
 func createError[M Message](err error) (message M) {

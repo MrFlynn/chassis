@@ -1,5 +1,6 @@
 # Chassis
 [![Go Reference](https://pkg.go.dev/badge/github.com/mrflynn/chassis.svg)](https://pkg.go.dev/github.com/mrflynn/chassis)
+[![Tests](https://github.com/MrFlynn/chassis/actions/workflows/test.yml/badge.svg)](https://github.com/MrFlynn/chassis/actions/workflows/test.yml)
 
 Chassis is a library that eliminates a bunch of the boilerplate when building
 new Discord bots. This library builds on top of the
