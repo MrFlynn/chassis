@@ -110,9 +110,11 @@ func (f *Frame) slashCommandEventListener(event *events.ApplicationCommandIntera
 	)
 
 	if logger.Enabled(f.globalCtx, slog.LevelDebug) {
-		logger = logger.With(
-			slog.Any("guild", *event.SlashCommandInteractionData().GuildID()),
-		)
+		if guildID := event.SlashCommandInteractionData().GuildID(); guildID != nil {
+			logger = logger.With(slog.Any("guild", guildID))
+		}
+
+		logger = slog.With(slog.Any("user", event.User().ID))
 	}
 
 	if handler, ok := f.deferredCommandHandlers[command]; ok && handler != nil {
