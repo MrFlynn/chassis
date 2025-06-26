@@ -80,6 +80,11 @@ func (f *Frame) Start(ctx context.Context, key string, opts ...bot.ConfigOpt) (e
 	return
 }
 
+// Context returns the global context for the program.
+func (f *Frame) Context() (ctx context.Context) {
+	return f.globalCtx
+}
+
 // AttachHandlers attaches the given command handlers to the given BotBuilder instance
 // so they can be used in the command event listener.
 func AttachHandlers[C Command, M Message](frame *Frame, refs ...SlashCommandHandlerRef[C, M]) {
